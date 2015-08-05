@@ -11,6 +11,10 @@
             {{product.name}}
             <em class="pull-right">{{product.price|currency}}</em>
         </h3>
+        <!-- Image Gallery  -->
+        <div class="gallery">
+            <img ng-src="{{product.images[0].full}}" />
+        </div>
     </div>
 </body>
 </html>
