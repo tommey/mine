@@ -13,11 +13,7 @@
         rarity: 7,
         color: '#CCC',
         faces: 14,
-        images: [
-            "images/gem-02.gif",
-            "images/gem-05.gif",
-            "images/gem-09.gif"
-        ]
+        images: [ ]
     }, {
         name: 'Bloodstone',
         description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however.",
@@ -42,7 +38,7 @@
         images: [
             "images/gem-06.gif",
             "images/gem-07.gif",
-            "images/gem-10.gif"
+            "images/gem-09.gif"
         ]
     }];
 })();
