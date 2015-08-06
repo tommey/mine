@@ -5,15 +5,22 @@
         this.products = gems;
     });
 
-    app.controller('TabController', function(){
-        this.tab = 1;
+    app.directive('productTabs', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'html/product-tabs.html',
+            controller: function () {
+                this.tab = 1;
 
-        this.setTab = function(tab){
-            this.tab = tab;
-        };
+                this.setTab = function (tab) {
+                    this.tab = tab;
+                };
 
-        this.isSet = function(tab){
-            return (this.tab === tab);
+                this.isSet = function (tab) {
+                    return (this.tab === tab);
+                };
+            },
+            controllerAs: 'tab'
         };
     });
 
