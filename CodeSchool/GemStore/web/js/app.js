@@ -24,11 +24,18 @@
         };
     });
 
-    app.controller('GalleryController', function(){
-        this.current = 0;
+    app.directive('productGallery', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'html/product-gallery.html',
+            controller: function () {
+                this.current = 0;
 
-        this.setCurrent = function(index){
-            this.current = index;
+                this.setCurrent = function (index) {
+                    this.current = index;
+                };
+            },
+            controllerAs: 'gallery'
         };
     });
 
