@@ -44,8 +44,15 @@
 
     app.directive("productSpecs", function() {
         return {
-            restrict: 'A',
+            restrict: 'E',
             templateUrl: 'html/product-specs.html'
+        };
+    });
+
+    app.directive('productReviews', function(){
+        return {
+            restrict: 'E',
+            templateUrl: 'html/product-reviews.html'
         };
     });
 })();

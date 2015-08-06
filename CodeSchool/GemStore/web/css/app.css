@@ -4,4 +4,6 @@
 .ng-valid.ng-dirty {
     border-color:green;
 }
-
+div.gallery > div {
+    margin:1em 0;
+}
