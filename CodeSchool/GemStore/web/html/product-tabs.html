@@ -16,22 +16,18 @@
     <div ng-show="tab.isSet(3)">
         <h4>Reviews</h4>
         <!--  Product Reviews List -->
-        <ul>
-            <li ng-repeat="review in product.reviews">
-                <blockquote>
-                    <strong>{{review.stars}} Stars</strong>
-                    {{review.body}}
-                    <cite class="clearfix">- {{review.author}} on {{review.createdOn | date}}</cite>
-                </blockquote>
-            </li>
-        </ul>
+        <blockquote ng-repeat="review in product.reviews">
+            <strong>{{review.stars}} Stars</strong>
+            {{review.body}}
+            <cite class="clearfix">- {{review.author}} on {{review.createdOn | date}}</cite>
+        </blockquote>
 
         <!--  Review Form -->
         <h4>Submit a Review</h4>
 
         <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
             <!--  Live Preview -->
-            <blockquote>
+            <blockquote ng-show="reviewCtrl.review.stars > 0 || reviewCtrl.review.body || reviewCtrl.review.author">
                 <strong>{{reviewCtrl.review.stars}} Stars</strong>
                 {{reviewCtrl.review.body}}
                 <cite class="clearfix">- {{reviewCtrl.review.author}}</cite>

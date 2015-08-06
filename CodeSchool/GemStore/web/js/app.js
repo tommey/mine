@@ -1,42 +1,8 @@
 (function() {
-    var app = angular.module('gemStore', []);
+    var app = angular.module('gemStore', ['store-products']);
 
     app.controller('StoreController', function(){
         this.products = gems;
-    });
-
-    app.directive('productTabs', function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'html/product-tabs.html',
-            controller: function () {
-                this.tab = 1;
-
-                this.setTab = function (tab) {
-                    this.tab = tab;
-                };
-
-                this.isSet = function (tab) {
-                    return (this.tab === tab);
-                };
-            },
-            controllerAs: 'tab'
-        };
-    });
-
-    app.directive('productGallery', function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'html/product-gallery.html',
-            controller: function () {
-                this.current = 0;
-
-                this.setCurrent = function (index) {
-                    this.current = index;
-                };
-            },
-            controllerAs: 'gallery'
-        };
     });
 
     app.controller('ReviewController', function(){
@@ -46,20 +12,6 @@
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review = {};
-        };
-    });
-
-    app.directive('productDescription', function(){
-        return {
-            restrict: 'E',
-            templateUrl: 'html/product-description.html'
-        };
-    });
-
-    app.directive("productSpecs", function() {
-        return {
-            restrict: 'A',
-            templateUrl: 'html/product-specs.html'
         };
     });
 
